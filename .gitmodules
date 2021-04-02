@@ -1,9 +1,9 @@
-[submodule ".\\CGHacker\\vendor\\eigen"]
-	path = .\\CGHacker\\vendor\\eigen
+[submodule "CGHacker/vendor/eigen"]
+	path = CGHacker/vendor/eigen
 	url = https://gitlab.com/libeigen/eigen.git
-[submodule ".\\CGHacker\\vendor\\glfw"]
-	path = .\\CGHacker\\vendor\\glfw
+[submodule "CGHacker/vendor/glfw"]
+	path = CGHacker/vendor/glfw
 	url = https://github.com/TheCherno/glfw.git
-[submodule ".\\CGHacker\\vendor\\spdlog"]
-	path = .\\CGHacker\\vendor\\spdlog
+[submodule "/CGHacker/vendor/spdlog"]
+	path = CGHacker/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
