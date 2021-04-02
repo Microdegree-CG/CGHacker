@@ -11,10 +11,10 @@ workspace "CGHacker"
         "Dist"
     }
 
-	solution_items
-	{
-		".editorconfig"
-	}
+    solution_items
+    {
+    ".editorconfig"
+    }
 
     flags
     {
@@ -32,7 +32,7 @@ IncludeDir["GLAD"]    = "%{wks.location}/CGHacker/vendor/Glad/include"
 
 -- projects
 group "Dependencies"
-	include "vendor"
+    include "vendor"
     include "CGHacker/vendor/glfw"
     include "CGHacker/vendor/Glad"
 group ""
