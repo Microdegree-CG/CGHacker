@@ -35,6 +35,16 @@ void InitMatrix()
 	std::cout << m << std::endl;
 }
 
+void GetMatrixInfo()
+{
+	Eigen::Matrix3d m;
+	m << 1, 2, 3,
+		4, 5, 6,
+		7, 8, 9;
+
+	std::cout << "rows: " << m.rows() << "\ncols: " <<  m.cols() << "\nsize: " << m.size() << std::endl;
+}
+
 int main()
 {
 	CG::Log::Init();
@@ -46,6 +56,11 @@ int main()
 	CreateVector();
 	CG_WARN("Init Matrix by \"<<\" operator ");
 	InitMatrix();
+
+	CG_WARN("Get Matrix Info ");
+	GetMatrixInfo();
+
+
 
 	return 0;
 }
