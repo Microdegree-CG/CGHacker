@@ -13,9 +13,11 @@ project "01-HelloEigen"
 
     includedirs
     {
-        "%{IncludeDir.eigen}"
+        "%{IncludeDir.eigen}",
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{wks.location}/CGHacker/src",
     }
-    
+
     links
     {
         "CGHacker"
