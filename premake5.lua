@@ -25,7 +25,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["eigen"]   = "vendor/eigen/Eigen"
+IncludeDir["eigen"]   = "%{wks.location}/CGHacker/vendor/eigen"
 IncludeDir["GLFW"]    = "%{wks.location}/CGHacker/vendor/glfw/include"
 IncludeDir["GLAD"]    = "%{wks.location}/CGHacker/vendor/Glad/include"
 
@@ -42,3 +42,4 @@ include "CGHacker"
 include "CGHackerTest"
 
 include "premakes/learn_opengl.lua"
+include "premakes/learn_eigen.lua"
