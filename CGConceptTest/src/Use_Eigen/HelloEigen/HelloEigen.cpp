@@ -25,6 +25,16 @@ void  CreateMatrix()
 	std::cout << m1 << std::endl;
 }
 
+void InitMatrix()
+{
+	Eigen::Matrix3d m;
+	m << 1, 2, 3,
+		4, 5, 6,
+		7, 8, 9;
+
+	std::cout << m << std::endl;
+}
+
 int main()
 {
 	CG::Log::Init();
@@ -34,6 +44,8 @@ int main()
 	CreateMatrix();
 	CG_WARN("Create Fix size col/row vector by Eigen::Vector<double, 5> ");
 	CreateVector();
+	CG_WARN("Init Matrix by \"<<\" operator ");
+	InitMatrix();
 
 	return 0;
 }
