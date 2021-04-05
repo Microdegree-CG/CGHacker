@@ -45,6 +45,16 @@ void GetMatrixInfo()
 	std::cout << "rows: " << m.rows() << "\ncols: " <<  m.cols() << "\nsize: " << m.size() << std::endl;
 }
 
+void CreateMatrixUseDefaultMethod()
+{
+	auto m1 = Eigen::MatrixXd::Random(4, 4);
+	auto m2 = Eigen::MatrixXd::Constant(4, 4, 10);
+	auto m3 = Eigen::MatrixXd::Zero(4, 4);
+	auto m4 = Eigen::MatrixXd::Ones(4, 4);
+	auto m5 = Eigen::MatrixXd::Identity(4, 4);
+	auto m6 = Eigen::MatrixXd::LinSpaced(100, 1, 50);
+}
+
 int main()
 {
 	CG::Log::Init();
@@ -60,7 +70,8 @@ int main()
 	CG_WARN("Get Matrix Info ");
 	GetMatrixInfo();
 
-
+	CG_WARN("Create Matrix Use default method");
+	CreateMatrixUseDefaultMethod();
 
 	return 0;
 }
