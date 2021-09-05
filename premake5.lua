@@ -18,7 +18,7 @@ workspace "CGHacker"
 
     flags
     {
-            "MultiProcessorCompile"
+        "MultiProcessorCompile"
     }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
