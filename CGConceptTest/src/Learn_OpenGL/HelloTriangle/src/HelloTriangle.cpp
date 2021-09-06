@@ -58,7 +58,6 @@ static unsigned int CompileShader(unsigned int type, const std::string& source)
 	glShaderSource(id, 1, &src, nullptr);
 	glCompileShader(id);
 
-	//TODO(guoliang): Error Handling
 	int result;
 	glGetShaderiv(id, GL_COMPILE_STATUS, &result);
 	if (result == GL_FALSE)
@@ -157,10 +156,8 @@ int main()
 		{
 			glUseProgram(program);
 			va.Bind();
-			ib.Bind();
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 			glBindVertexArray(0);
-
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();
