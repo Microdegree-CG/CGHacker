@@ -142,6 +142,7 @@ int main()
 
 		VertexArray va;
 		VertexBuffer vb(vertices, 4 * 3 * sizeof(float));
+
 		VertexBufferLayout layout;
 		layout.Push<float>(3);
 		va.AddBuffer(vb, layout);
