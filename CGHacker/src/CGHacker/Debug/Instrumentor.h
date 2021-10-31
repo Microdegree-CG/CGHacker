@@ -34,7 +34,11 @@ namespace CG
 		std::ofstream m_OutputStream;
 
 	public:
-		Instrumentor() : m_CurrentSession(nullptr) {}
+		Instrumentor() : 
+			m_CurrentSession(nullptr) 
+		{
+
+		}
 
 		void BeginSession(const std::string& name,
 			const std::string& filepath = "results.json")
@@ -194,41 +198,38 @@ namespace CG
 } // namespace CG
 
 #define CG_PROFILE 0
-#if CG_PROFILE
-  // Resolve which function signature macro will be used. Note that this only
-// is resolved when the (pre)compiler starts, so the syntax highlighting
-// could mark the wrong one in your editor!
-#if defined(__GNUC__) || (defined(__MWERKS__) && (__MWERKS__ >= 0x3000)) ||    \
-    (defined(__ICC) && (__ICC >= 600)) || defined(__ghs__)
-#define CG_FUNC_SIG __PRETTY_FUNCTION__
-#elif defined(__DMC__) && (__DMC__ >= 0x810)
-#define CG_FUNC_SIG __PRETTY_FUNCTION__
-#elif (defined(__FUNCSIG__) || (_MSC_VER))
-#define CG_FUNC_SIG __FUNCSIG__
-#elif (defined(__INTEL_COMPILER) && (__INTEL_COMPILER >= 600)) ||              \
-    (defined(__IBMCPP__) && (__IBMCPP__ >= 500))
-#define CG_FUNC_SIG __FUNCTION__
-#elif defined(__BORLANDC__) && (__BORLANDC__ >= 0x550)
-#define CG_FUNC_SIG __FUNC__
-#elif defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901)
-#define CG_FUNC_SIG __func__
-#elif defined(__cplusplus) && (__cplusplus >= 201103)
-#define CG_FUNC_SIG __func__
-#else
-#define CG_FUNC_SIG "CG_FUNC_SIG unknown!"
-#endif
 
-#define CG_PROFILE_BEGIN_SESSION(name, filepath)                           \
-  ::CG::Instrumentor::Get().BeginSession(name, filepath)
-#define CG_PROFILE_END_SESSION() ::CG::Instrumentor::Get().EndSession()
-#define CG_PROFILE_SCOPE(name)                                             \
-  constexpr auto fixedName =                                                   \
-      ::CG::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");       \
-  ::CG::InstrumentationTimer timer##__LINE__(fixedName.Data)
-#define CG_PROFILE_FUNCTION() CG_PROFILE_SCOPE(CG_FUNC_SIG)
+#if CG_PROFILE
+	// Resolve which function signature macro will be used. Note that this only
+	// is resolved when the (pre)compiler starts, so the syntax highlighting
+	// could mark the wrong one in your editor!
+
+	#if defined(__GNUC__) || (defined(__MWERKS__) && (__MWERKS__ >= 0x3000)) || (defined(__ICC) && (__ICC >= 600)) || defined(__ghs__)
+		#define CG_FUNC_SIG __PRETTY_FUNCTION__
+	#elif defined(__DMC__) && (__DMC__ >= 0x810)
+		#define CG_FUNC_SIG __PRETTY_FUNCTION__
+	#elif (defined(__FUNCSIG__) || (_MSC_VER))
+		#define CG_FUNC_SIG __FUNCSIG__
+	#elif (defined(__INTEL_COMPILER) && (__INTEL_COMPILER >= 600)) || (defined(__IBMCPP__) && (__IBMCPP__ >= 500))
+		#define CG_FUNC_SIG __FUNCTION__
+	#elif defined(__BORLANDC__) && (__BORLANDC__ >= 0x550)
+		#define CG_FUNC_SIG __FUNC__
+	#elif defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901)
+		#define CG_FUNC_SIG __func__
+	#elif defined(__cplusplus) && (__cplusplus >= 201103)
+		#define CG_FUNC_SIG __func__
+	#else
+		#define CG_FUNC_SIG "CG_FUNC_SIG unknown!"
+	#endif
+
+	#define CG_PROFILE_BEGIN_SESSION(name, filepath) ::CG::Instrumentor::Get().BeginSession(name, filepath)
+	#define CG_PROFILE_END_SESSION() ::CG::Instrumentor::Get().EndSession()
+	#define CG_PROFILE_SCOPE(name) constexpr auto fixedName =	::CG::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");			\
+																::CG::InstrumentationTimer timer##__LINE__(fixedName.Data)
+	#define CG_PROFILE_FUNCTION() CG_PROFILE_SCOPE(CG_FUNC_SIG)
 #else
-#define CG_PROFILE_BEGIN_SESSION(name, filepath)
-#define CG_PROFILE_END_SESSION()
-#define CG_PROFILE_SCOPE(name)
-#define CG_PROFILE_FUNCTION()
+	#define CG_PROFILE_BEGIN_SESSION(name, filepath)
+	#define CG_PROFILE_END_SESSION()
+	#define CG_PROFILE_SCOPE(name)
+	#define CG_PROFILE_FUNCTION()
 #endif
