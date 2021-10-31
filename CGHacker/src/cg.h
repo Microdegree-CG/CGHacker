@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CGHacker/Core/Base.h"
+#include "CGHacker/Core/Assert.h"
 #include "CGHacker/Core/Log.h"
 
 

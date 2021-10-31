@@ -25,7 +25,7 @@ project "CGHacker"
     defines
     {
         "_CRT_SECURE_NO_WARNINGS",
-        "NMROS_ENABLE_ASSERT",
+        "GLFW_INCLUDE_NONE",
     }
 
     includedirs
@@ -44,9 +44,6 @@ project "CGHacker"
 
     libdirs
     {
-        --"vendor/JAI/lib/Win64_x64",
-        --"vendor/NI/lib64/msvc",
-        --"vendor/art/PCI9757/libs"
     }
 
     --filter "files:**.c"
