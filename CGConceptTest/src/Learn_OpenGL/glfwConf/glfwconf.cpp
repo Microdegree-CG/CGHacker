@@ -18,12 +18,12 @@ int main()
 		return -1;
 	}
 
-	// Tell GLFW to make the context of our window the main context on the current thread.
+	//note(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
 	glfwMakeContextCurrent(window);
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
-		glClearColor(1, 1, 1, 1);
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
 		glfwSwapBuffers(window);
 

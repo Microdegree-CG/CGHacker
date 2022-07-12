@@ -3,21 +3,10 @@
 
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0, 0, width, height);
-}
 
-void processInput(GLFWwindow* window)
+int main()
 {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-		glfwSetWindowShouldClose(window, true);
-	}
-}
 
-int test_glad()
-{
 	glfwInit();
 
 	// Create window use glfw
@@ -35,9 +24,7 @@ int test_glad()
 	}
 
 	// Create opengl context
-
 	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
@@ -48,22 +35,12 @@ int test_glad()
 
 	while (!glfwWindowShouldClose(window))
 	{
-		processInput(window);
-
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
 	glfwTerminate();
-	return 0;
-}
-
-int main()
-{
-	test_glad();
-
-	std::cin.get();
 }
