@@ -6,4 +6,4 @@
 
 // Debug information
 #include "CGHacker/Debug/Instrumentor.h"
-#include "CGHacker/Debug/Timer.h"
+#include "CGHacker/Core/Timer.h"

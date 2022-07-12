@@ -5,3 +5,8 @@ group "CGConceptTest/LearnOpenGL"
     include "CGConceptTest/src/Learn_OpenGL/Shaders"
     include "CGConceptTest/src/Learn_OpenGL/Texture"
 group ""
+
+
+group "CGConceptTest/MFC_OpenGL"
+    include "CGConceptTest/src/MFC_OpenGL"
+group ""
