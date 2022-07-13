@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "cg.h"
 
 #include <iostream>
 
@@ -7,6 +8,7 @@
 int main()
 {
 
+	CG::Log::Init("Core", "GladConf");
 	glfwInit();
 
 	// Create window use glfw
@@ -15,10 +17,12 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	CG_INFO("The GLFW version is: {0}", glfwGetVersionString());
+
 	GLFWwindow* window = glfwCreateWindow(800, 600, "Glad Test", NULL, NULL);
 	if (window == NULL)
 	{
-		std::cout << "Failed to create GLFW window" << std::endl;
+		CG_ERROR("Failed to create GLFW window");
 		glfwTerminate();
 		return -1;
 	}
@@ -28,10 +32,11 @@ int main()
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		std::cout << "Failed to initalize GLAD" << std::endl;
+		CG_ERROR("Failed to initalize GLAD");
 		return -1;
 	}
 
+	CG_INFO("The OpenGL version is: {0} {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
 
 	while (!glfwWindowShouldClose(window))
 	{
