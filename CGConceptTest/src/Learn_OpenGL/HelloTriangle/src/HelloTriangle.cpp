@@ -18,9 +18,9 @@ struct ShaderSource
 
 enum class ShaderType
 {
-	NONE=-1,
-	VERTEX=0,
-	FRAGMENT=1
+	NONE = -1,
+	VERTEX = 0,
+	FRAGMENT = 1
 };
 
 static ShaderSource ParseShader(const std::string& filepath)
@@ -66,7 +66,7 @@ static unsigned int CompileShader(unsigned int type, const std::string& source)
 		glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
 		char* message = (char*)_malloca(length * sizeof(char));
 		glGetShaderInfoLog(id, length, &length, message);
-		std::cout << "Failed to compile shader!" << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl; 
+		std::cout << "Failed to compile shader!" << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl;
 		std::cout << message << std::endl;
 
 		glDeleteShader(id);
@@ -119,56 +119,54 @@ int main()
 	}
 
 	glfwMakeContextCurrent(window);
-	
+
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initalize GLAD" << std::endl;
 		return -1;
 	}
 
+	float vertices[] = {
+		0.5f, 0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		-0.5f, -0.5f, 0.0f,
+		-0.5f, 0.5f, 0.0f ,
+	};
+
+	unsigned int indices[] = {
+		0, 1, 3,
+		1, 2, 3
+	};
+
+	VertexArray va;
+	VertexBuffer vb(vertices, 4 * 3 * sizeof(float));
+
+	VertexBufferLayout layout;
+	layout.Push<float>(3);
+	va.AddBuffer(vb, layout);
+
+	IndexBuffer ib(indices, 6);
+
+	ShaderSource src = ParseShader("res/shaders/basic.shader");
+	unsigned int program = CreateShader(src.vectexShader, src.fragmentShader);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+
+	while (!glfwWindowShouldClose(window))
 	{
-		float vertices[] = {
-			0.5f, 0.5f, 0.0f,
-			0.5f, -0.5f, 0.0f,
-			-0.5f, -0.5f, 0.0f,
-			-0.5f, 0.5f, 0.0f ,
-		};
+		glUseProgram(program);
 
-		unsigned int indices[] = {
-			0, 1, 3,
-			1, 2, 3
-		};
+		va.Bind();
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		va.Unbind();
 
-		VertexArray va;
-		VertexBuffer vb(vertices, 4 * 3 * sizeof(float));
-
-		VertexBufferLayout layout;
-		layout.Push<float>(3);
-		va.AddBuffer(vb, layout);
-
-		IndexBuffer ib(indices, 6);
-
-		ShaderSource src = ParseShader("res/shaders/basic.shader");
-		unsigned int program = CreateShader(src.vectexShader, src.fragmentShader);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-
-		while (!glfwWindowShouldClose(window))
-		{
-			glUseProgram(program);
-
-			va.Bind();
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-			va.Unbind();
-
-			glfwSwapBuffers(window);
-			glfwPollEvents();
-		}
-
-		glDeleteProgram(program);
-
+		glfwSwapBuffers(window);
+		glfwPollEvents();
 	}
-		glfwTerminate();
+
+	glDeleteProgram(program);
+
+	glfwTerminate();
 
 	return 0;
 }
