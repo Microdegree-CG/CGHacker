@@ -133,6 +133,7 @@ int main()
 		-0.5f, 0.5f, 0.0f ,
 	};
 
+
 	unsigned int indices[] = {
 		0, 1, 3,
 		1, 2, 3
@@ -149,12 +150,16 @@ int main()
 
 	ShaderSource src = ParseShader("res/shaders/basic.shader");
 	unsigned int program = CreateShader(src.vectexShader, src.fragmentShader);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glUseProgram(program);
+
+	float timeValue = glfwGetTime();
+	float greenValue = sin(timeValue) / 2.0f + 0.5f;
+	int res = glGetUniformLocation(program, "u_Color");
+	glUniform4f(res, 0.0f, greenValue, 0.0f, 1.0f);
 
 
 	while (!glfwWindowShouldClose(window))
 	{
-		glUseProgram(program);
 
 		va.Bind();
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

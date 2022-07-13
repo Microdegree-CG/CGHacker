@@ -14,12 +14,15 @@ project "04-Shaders"
 
     includedirs
     {
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}"        
     }
 
     links
     {
+        "CGHacker",
         "GLFW",
         "GLAD",
         "opengl32.lib"
@@ -29,6 +32,7 @@ project "04-Shaders"
         systemversion "latest"
 
 	filter "configurations:Debug"
+        defines "CG_DEBUG"
         systemversion "latest"
 		runtime "Debug"
         symbols "on"

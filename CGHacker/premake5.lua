@@ -34,6 +34,7 @@ project "CGHacker"
         "vendor/spdlog/include",
         "vendor/eigen/Eigen",
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLAD}",
     }
 
     links 
