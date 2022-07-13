@@ -1,16 +1,14 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
 
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 
-#include "Shader.h"
+#include "Renderer.h"
+
+#include <iostream>
 
 
 int main()
@@ -67,15 +65,20 @@ int main()
 	float timeValue = glfwGetTime();
 	float greenValue = sin(timeValue) / 2.0f + 0.5f;
 	Shader shader("res/shaders/Basic.shader");
-	shader.Bind();
-	shader.setUniform4f("u_Color",0.0f, greenValue, 0.0f, 1.0f);
+
+	va.Unbind();
+	vb.Unbind();
+	ib.Unbind();
+	shader.Unbind();
 
 
+	Renderer renderer;
 	while (!glfwWindowShouldClose(window))
 	{
-		va.Bind();
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		va.Unbind();
+		renderer.Clear();
+		shader.Bind();
+		shader.setUniform4f("u_Color",0.0f, greenValue, 0.0f, 1.0f);
+		renderer.Draw(va, ib, shader);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
