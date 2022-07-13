@@ -12,10 +12,10 @@ namespace CG
 	class Log 
 	{
 		public:
-		  static void Init();
 
-		  static Ref<spdlog::logger> &GetCoreLogger() { return s_CoreLogger; }
-		  static Ref<spdlog::logger> &GetClientLogger() { return s_ClientLogger; }
+			static void Init(std::string coreName, std::string clientName, std::string logName = "CGHacker.log");
+			static Ref<spdlog::logger> &GetCoreLogger() { return s_CoreLogger; }
+			static Ref<spdlog::logger> &GetClientLogger() { return s_ClientLogger; }
 
 		private:
 		  static Ref<spdlog::logger> s_CoreLogger;

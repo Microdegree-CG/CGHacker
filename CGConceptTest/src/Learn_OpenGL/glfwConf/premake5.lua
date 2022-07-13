@@ -14,11 +14,14 @@ project "01-GLFWConf"
 
     includedirs
     {
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
     }
 
     links
     {
+        "CGHacker",
         "GLFW",
         "opengl32.lib"
     }
