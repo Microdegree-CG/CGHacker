@@ -150,14 +150,16 @@ int main()
 
 		ShaderSource src = ParseShader("res/shaders/basic.shader");
 		unsigned int program = CreateShader(src.vectexShader, src.fragmentShader);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 
 		while (!glfwWindowShouldClose(window))
 		{
 			glUseProgram(program);
+
 			va.Bind();
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-			glBindVertexArray(0);
+			va.Unbind();
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();
