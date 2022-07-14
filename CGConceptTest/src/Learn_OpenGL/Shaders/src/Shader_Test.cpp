@@ -90,5 +90,5 @@ int main()
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 
-	std::cin.get();
+	return 0;
 }
