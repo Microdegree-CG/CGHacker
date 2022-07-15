@@ -35,6 +35,7 @@ project "CGHacker"
         "vendor/eigen/Eigen",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
+        "%{IncludeDir.STB}",
     }
 
     links 
