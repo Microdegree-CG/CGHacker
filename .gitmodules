@@ -13,3 +13,6 @@
 [submodule "CGHacker/vendor/stb"]
 	path = CGHacker/vendor/stb
 	url = https://github.com/nothings/stb.git
+[submodule "vendor/LearnOpenGL-with-OpenTK"]
+	path = vendor/LearnOpenGL-with-OpenTK
+	url = https://github.com/huangkumao/LearnOpenGL-with-OpenTK.git
