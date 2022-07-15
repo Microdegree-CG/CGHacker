@@ -36,6 +36,10 @@ int main()
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
+	int nrAttributes;
+	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+	std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
+
 	Utils::Shader shaderObj("asserts/shaders/vert.vs", "asserts/shaders/frag.fs");
 
 
