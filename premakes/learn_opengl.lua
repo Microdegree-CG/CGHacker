@@ -4,6 +4,11 @@ group "CGConceptTest/LearnOpenGL"
     include "CGConceptTest/src/Learn_OpenGL/HelloTriangle"
     include "CGConceptTest/src/Learn_OpenGL/Shaders"
     include "CGConceptTest/src/Learn_OpenGL/Texture"
+    include "CGConceptTest/src/Learn_OpenGL/Texture"
+    include "CGConceptTest/src/Learn_OpenGL/Texture_exercise1"
+    include "CGConceptTest/src/Learn_OpenGL/Texture_exercise2"
+    include "CGConceptTest/src/Learn_OpenGL/Texture_exercise3"
+    include "CGConceptTest/src/Learn_OpenGL/Texture_exercise4"
 group ""
 
 

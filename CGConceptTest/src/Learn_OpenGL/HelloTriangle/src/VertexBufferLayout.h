@@ -43,6 +43,7 @@ public:
 		static_assert(false);
 	}
 
+	//note(guoliang): count means the every vertex contains data number
 	template<>
 	void Push<float>(unsigned int count)
 	{

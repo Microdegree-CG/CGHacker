@@ -15,9 +15,9 @@ project "CGHackerTest"
     
     includedirs
 	{
-		"%{wks.location}/CGHacker/vendor/spdlog/include",
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
         "%{wks.location}/CGHacker/vendor/eigen",
-		"%{wks.location}/CGHacker/src",
+        "%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}"
     }
