@@ -1,5 +1,11 @@
+#if defined(GLFW_INCLUDE_NONE)
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+#else
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#endif
+
 #include "cg.h"
 
 #include <iostream>
