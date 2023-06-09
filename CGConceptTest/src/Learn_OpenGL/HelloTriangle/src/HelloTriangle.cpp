@@ -1,6 +1,10 @@
+#if defined(GLFW_INCLUDE_NONE)
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+#else
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
+#endif
 
 #include "VertexArray.h"
 #include "VertexBuffer.h"
@@ -9,10 +13,12 @@
 #include "Renderer.h"
 
 #include <iostream>
+#include "cg.h"
 
 
 int main()
 {
+	CG::Log::Init("Core", "Triangle","HelloTriangle.log");
 	GLFWwindow* window{ nullptr };
 
 	if (!glfwInit())
@@ -21,9 +27,7 @@ int main()
 		return -1;
 	}
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	CG_INFO("The GLFW version is: {0}", glfwGetVersionString());
 
 	window = glfwCreateWindow(800, 600, "Hello Triangle", nullptr, nullptr);
 	if (!window)
@@ -40,6 +44,7 @@ int main()
 		return -1;
 	}
 
+	CG_INFO("The OpenGL version is: {0} {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
 	float vertices[] = {
 		0.5f, 0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,

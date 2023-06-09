@@ -14,12 +14,16 @@ project "03-Hello-Triangle"
 
     includedirs
     {
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
+        "%{wks.location}/CGHacker/vendor/eigen",
+        "%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}"        
+        "%{IncludeDir.GLAD}"
     }
 
     links
     {
+        "CGHacker",
         "GLFW",
         "GLAD",
         "opengl32.lib"
@@ -30,12 +34,14 @@ project "03-Hello-Triangle"
 
 	filter "configurations:Debug"
         systemversion "latest"
+        defines "CG_DEBUG"
 		runtime "Debug"
         symbols "on"
         staticruntime "off"
 
 	filter "configurations:Release"
         systemversion "latest"
+        defines "CG_RELEASE"
 		runtime "Release"
         optimize "on"
         staticruntime "On"

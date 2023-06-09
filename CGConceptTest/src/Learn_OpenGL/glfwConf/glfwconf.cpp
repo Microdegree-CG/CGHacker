@@ -1,4 +1,10 @@
-#include "GLFW/glfw3.h"
+#if defined(GLFW_INCLUDE_NONE)
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+#else
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#endif
 #include "cg.h"
 
 int main()
@@ -11,9 +17,9 @@ int main()
 	else
 		CG_INFO("Init GLFW");
 
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	CG_INFO("The GLFW version is: {0}", glfwGetVersionString());
 
