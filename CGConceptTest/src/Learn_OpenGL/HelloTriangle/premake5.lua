@@ -9,7 +9,8 @@ project "03-Hello-Triangle"
     files
     {
         "src/**.h",
-        "src/**.cpp"
+        "src/**.cpp",
+        "res/**"
     }
 
     includedirs
