@@ -45,6 +45,7 @@ int main()
 	}
 
 	CG_INFO("The OpenGL version is: {0} {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
+
 	float vertices[] = {
 		0.5f, 0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
@@ -58,7 +59,7 @@ int main()
 	};
 
 	VertexArray va;
-	VertexBuffer vb(vertices, 4 * 3 * sizeof(float));
+	VertexBuffer vb(vertices, sizeof(vertices));
 
 	VertexBufferLayout layout;
 	layout.Push<float>(3);
