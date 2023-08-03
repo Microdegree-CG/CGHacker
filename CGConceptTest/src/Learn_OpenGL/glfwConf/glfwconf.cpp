@@ -1,16 +1,15 @@
-#if defined(GLFW_INCLUDE_NONE)
 #include <GLFW/glfw3.h>
-#include <glad/glad.h>
-#else
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#endif
 #include "cg.h"
+
+void process_input(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, true);
+}
 
 int main()
 {
 	CG::Log::Init("CORE", "GLFWConf");
-	GLFWwindow* window;
 
 	if (!glfwInit())
 		return -1;
@@ -23,24 +22,25 @@ int main()
 
 	CG_INFO("The GLFW version is: {0}", glfwGetVersionString());
 
-	window = glfwCreateWindow(640, 480, "Hello Window", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "GLFW Test", NULL, NULL);
 	if (!window)
 	{
+		CG_ERROR("Failed to create GLFW window");
 		glfwTerminate();
 		return -1;
 	}
 
-	//note(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
+	// NOTE:(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
 	glfwMakeContextCurrent(window);
 	CG_INFO("The OpenGL version is: {0} {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
 	while (!glfwWindowShouldClose(window))
 	{
+		process_input(window);
+    
 		glClear(GL_COLOR_BUFFER_BIT);
-		//note(guoliang): Set the background color of the window by oldschool method
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
+    
 		glfwSwapBuffers(window);
-
 		glfwPollEvents();
 	}
 	

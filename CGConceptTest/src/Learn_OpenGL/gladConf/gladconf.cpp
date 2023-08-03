@@ -7,13 +7,7 @@
 #endif
 
 #include "cg.h"
-
 #include <iostream>
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0, 0, 400, 300);
-}
 
 void process_input(GLFWwindow* window)
 {
@@ -35,7 +29,7 @@ int main()
 
 	CG_INFO("The GLFW version is: {0}", glfwGetVersionString());
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Glad Test", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "GLAD Test", NULL, NULL);
 	if (window == NULL)
 	{
 		CG_ERROR("Failed to create GLFW window");
@@ -43,28 +37,28 @@ int main()
 		return -1;
 	}
 
-	// Create opengl context
+// NOTE:(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
+// NOTE:(guoliang): Must call before gladLoadGLLoader
 	glfwMakeContextCurrent(window);
-
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		CG_ERROR("Failed to initalize GLAD");
 		return -1;
 	}
 
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	CG_INFO("The OpenGL version is: {0} {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
 
 	while (!glfwWindowShouldClose(window))
 	{
 		process_input(window);
 
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
+	glfwDestroyWindow(window);
 	glfwTerminate();
 }

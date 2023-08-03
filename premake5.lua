@@ -13,7 +13,7 @@ workspace "CGHacker"
 
     solution_items
     {
-    ".editorconfig"
+        ".editorconfig"
     }
 
     flags
