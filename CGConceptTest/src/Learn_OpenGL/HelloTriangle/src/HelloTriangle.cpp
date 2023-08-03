@@ -9,12 +9,10 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
-
 #include "Renderer.h"
 
-#include <iostream>
 #include "cg.h"
-
+#include <iostream>
 
 int main()
 {
@@ -23,7 +21,7 @@ int main()
 
 	if (!glfwInit())
 	{
-		std::cout << "GLFW init failed!" << std::endl;
+        CG_ERROR("GLFW init failed!");
 		return -1;
 	}
 
