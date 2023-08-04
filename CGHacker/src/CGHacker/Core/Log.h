@@ -13,7 +13,7 @@ namespace CG
 	{
 		public:
 
-			static void Init(std::string coreName, std::string clientName, std::string logName = "CGHacker.log");
+			static void Init();
 			static Ref<spdlog::logger> &GetCoreLogger() { return s_CoreLogger; }
 			static Ref<spdlog::logger> &GetClientLogger() { return s_ClientLogger; }
 
