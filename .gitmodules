@@ -16,3 +16,6 @@
 [submodule "vendor/LearnOpenGL-with-OpenTK"]
 	path = vendor/LearnOpenGL-with-OpenTK
 	url = https://github.com/huangkumao/LearnOpenGL-with-OpenTK.git
+[submodule "CGHacker/vendor/SDL"]
+	path = CGHacker/vendor/SDL
+	url = https://github.com/Microdegree-CG/SDL.git
