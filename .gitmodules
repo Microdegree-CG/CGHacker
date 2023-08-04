@@ -19,3 +19,6 @@
 [submodule "CGHacker/vendor/SDL"]
 	path = CGHacker/vendor/SDL
 	url = https://github.com/Microdegree-CG/SDL.git
+[submodule "CGHacker/vendor/SFML"]
+	path = CGHacker/vendor/SFML
+	url = https://github.com/Microdegree-CG/SFML.git
