@@ -3,30 +3,30 @@ project "03-Hello-Triangle"
     language "C++"
     cppdialect "C++17"
 
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-    
+    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+
     files
     {
         "src/**.h",
         "src/**.cpp",
-        "res/**"
     }
 
     includedirs
     {
-        "%{wks.location}/CGHacker/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.EIGEN}",
         "%{wks.location}/CGHacker/vendor/eigen",
         "%{wks.location}/CGHacker/src",
-        "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}"
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "CGHacker",
         "GLFW",
         "GLAD",
+        "CGHacker",
         "opengl32.lib"
     }
 

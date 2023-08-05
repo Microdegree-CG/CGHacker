@@ -1,10 +1,9 @@
-
 # Binaries
 **/bin/
-!vendor/premake/bin/
-bin-int/
+**/bin-int/
 
-# Hazel files
+!vendor/premake/bin/
+# Log files
 *.log
 
 # Visual Studio files and folder
@@ -13,3 +12,5 @@ bin-int/
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
+.vscode
+.cache

@@ -3,28 +3,28 @@ project "02-GLADConf"
     language "C++"
     cppdialect "C++17"
 
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
     
     files
     {
-        "**.h",
-        "**.cpp"
+        "src/**.h",
+        "src/**.cpp"
     }
 
     includedirs
     {
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
-		"%{wks.location}/CGHacker/vendor/spdlog/include",
 		"%{wks.location}/CGHacker/src",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "CGHacker",
         "GLFW",
         "GLAD",
+        "CGHacker",
         "opengl32.lib"
     }
 

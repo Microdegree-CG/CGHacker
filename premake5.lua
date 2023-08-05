@@ -25,7 +25,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["eigen"]   = "%{wks.location}/CGHacker/vendor/eigen"
+IncludeDir["EIGEN"]   = "%{wks.location}/CGHacker/vendor/eigen"
 IncludeDir["GLFW"]    = "%{wks.location}/CGHacker/vendor/glfw/include"
 IncludeDir["GLAD"]    = "%{wks.location}/CGHacker/vendor/Glad/include"
 IncludeDir["STB"]     = "%{wks.location}/CGHacker/vendor/stb"

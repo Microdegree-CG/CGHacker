@@ -3,26 +3,26 @@ project "01-GLFWConf"
     language "C++"
     cppdialect "C++17"
 
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
     
     files
     {
-        "**.h",
-        "**.cpp"
+        "src/*.h",
+        "src/*.cpp"
     }
 
     includedirs
     {
-		"%{wks.location}/CGHacker/vendor/spdlog/include",
-		"%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
+		"%{wks.location}/CGHacker/src",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "CGHacker",
         "GLFW",
+        "CGHacker",
         "opengl32.lib"
     }
 
