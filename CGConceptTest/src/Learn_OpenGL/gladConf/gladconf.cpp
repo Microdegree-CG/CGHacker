@@ -18,7 +18,7 @@ void process_input(GLFWwindow* window)
 int main()
 {
 
-	CG::Log::Init("Core", "GladConf");
+	CG::Log::Init();
 	glfwInit();
 
 	// Create window use glfw

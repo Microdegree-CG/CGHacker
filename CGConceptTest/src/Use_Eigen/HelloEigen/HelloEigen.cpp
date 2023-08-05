@@ -9,7 +9,7 @@
 
 int main()
 {
-	CG::Log::Init("Core", "Eigen");
+	CG::Log::Init();
 	CG_INFO("Hello Eigen");
 	Eigen::MatrixXd m(2, 2);
 

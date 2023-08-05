@@ -9,7 +9,7 @@ void process_input(GLFWwindow* window)
 
 int main()
 {
-	CG::Log::Init("CORE", "GLFWConf");
+	CG::Log::Init();
 
 	if (!glfwInit())
 		return -1;
