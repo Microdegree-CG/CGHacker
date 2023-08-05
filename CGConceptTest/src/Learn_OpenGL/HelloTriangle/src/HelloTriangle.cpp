@@ -6,9 +6,9 @@
 #include <GLFW/glfw3.h>
 #endif
 
-#include "VertexArray.h"
-#include "VertexBuffer.h"
-#include "IndexBuffer.h"
+#include "vao/VertexArray.h"
+#include "vbo/VertexBuffer.h"
+#include "ebo/IndexBuffer.h"
 #include "Renderer.h"
 
 #include "cg.h"
@@ -16,7 +16,7 @@
 
 int main()
 {
-	CG::Log::Init("Core", "Triangle","HelloTriangle.log");
+	CG::Log::Init();
 	GLFWwindow* window{ nullptr };
 
 	if (!glfwInit())
