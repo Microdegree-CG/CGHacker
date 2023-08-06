@@ -7,9 +7,6 @@
 #include <string>
 #include <sstream>
 
-
-
-
 enum class ShaderType
 {
 	NONE = -1,
