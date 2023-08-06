@@ -6,9 +6,9 @@
 #include <GLFW/glfw3.h>
 #endif
 
-#include "vao/VertexArray.h"
-#include "vbo/VertexBuffer.h"
-#include "ebo/IndexBuffer.h"
+#include "VAO/VertexArray.h"
+#include "VBO/VertexBuffer.h"
+#include "EBO/IndexBuffer.h"
 #include "Renderer.h"
 
 #include "cg.h"
