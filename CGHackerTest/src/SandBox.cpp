@@ -1,6 +1,5 @@
 #include "cg.h"
 
-
 int main()
 {
 	CG::Log::Init();
