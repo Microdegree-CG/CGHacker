@@ -14,7 +14,8 @@
 #include "cg.h"
 #include <iostream>
 
-int main() {
+int main() 
+{
 	CG::Log::Init();
 	GLFWwindow* window{ nullptr };
 
@@ -63,10 +64,9 @@ int main() {
 	va.AddBuffer(vb, layout);
 
 	IndexBuffer ib(indices, 6);
+	ib.Bind();
 
 
-	float timeValue = glfwGetTime();
-	float greenValue = sin(timeValue) / 2.0f + 0.5f;
 	Shader shader("res/shaders/Basic.shader");
 
 	va.Unbind();
@@ -79,6 +79,9 @@ int main() {
 	while (!glfwWindowShouldClose(window)) 
     {
 	    renderer.Clear();
+
+		float timeValue = glfwGetTime();
+		float greenValue = sin(timeValue) / 2.0f + 0.5f;
 	    shader.Bind();
 	    shader.setUniform4f("u_Color",0.0f, greenValue, 0.0f, 1.0f);
 	    renderer.Draw(va, ib, shader);

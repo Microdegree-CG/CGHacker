@@ -16,7 +16,7 @@ enum class ShaderType
 
 Shader::Shader(const std::string& filepath)
 	:m_FilePath(filepath)
-	,m_RendererID(0)
+	, m_RendererID(0)
 {
 	ShaderSource src = ParseShader(filepath);
 	m_RendererID = CreateShader(src.vectexShader, src.fragmentShader);
@@ -34,7 +34,6 @@ void Shader::Bind() const
 
 void Shader::Unbind() const
 {
-
 	glUseProgram(0);
 }
 
@@ -46,10 +45,8 @@ ShaderSource Shader::ParseShader(const std::string& filepath)
 	ShaderType type = ShaderType::NONE;
 	std::stringstream ss[2];
 
-	while (std::getline(file, line))
-	{
-		if (line.find("shader") != std::string::npos)
-		{
+	while (std::getline(file, line)) {
+		if (line.find("shader") != std::string::npos) {
 			if (line.find("vertex") != std::string::npos)
 				type = ShaderType::VERTEX;
 			else if (line.find("fragment") != std::string::npos)
@@ -95,7 +92,6 @@ unsigned int Shader::CreateShader(const std::string& vs, const std::string& fs)
 	unsigned int vertexShader = CompileShader(GL_VERTEX_SHADER, vs);
 	unsigned int fragmentShader = CompileShader(GL_FRAGMENT_SHADER, fs);
 
-
 	glAttachShader(program, vertexShader);
 	glAttachShader(program, fragmentShader);
 
@@ -108,7 +104,7 @@ unsigned int Shader::CreateShader(const std::string& vs, const std::string& fs)
 	return program;
 }
 
-void Shader::setUniform4f(const std::string& name, float v0, float v1, float v2, float v3 )
+void Shader::setUniform4f(const std::string& name, float v0, float v1, float v2, float v3)
 {
 	glUniform4f(GetUniformLocation(name), v0, v1, v2, v3);
 }
@@ -119,8 +115,8 @@ unsigned int Shader::GetUniformLocation(const std::string& name)
 		return m_UniformLocationCache[name];
 
 	int location = glGetUniformLocation(m_RendererID, name.c_str());
-	//note(guoliang): should do some check
 
+	// NOTE: (guoliang): should do some check
 	m_UniformLocationCache[name] = location;
 
 	return location;
