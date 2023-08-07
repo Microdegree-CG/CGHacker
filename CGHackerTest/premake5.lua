@@ -3,14 +3,13 @@ project "CGHackerTest"
 	language "C++"
 	cppdialect "C++17"
 
-
 	targetdir ("..bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("..bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
-		"src/**.h",
-		"src/**.cpp"
+	    "src/**.h",
+	    "src/**.cpp"
     }
     
     includedirs
@@ -29,19 +28,9 @@ project "CGHackerTest"
         "GLAD",
         "opengl32.lib"
     }
-
-    libdirs
-    {
-        
-    }
     
     filter "system:windows"
         systemversion "latest"
-
-        defines 
-        {
-
-        }
 
     filter "configurations:Debug"
         defines "CG_DEBUG"
