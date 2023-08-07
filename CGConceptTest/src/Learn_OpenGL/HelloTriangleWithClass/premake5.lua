@@ -5,7 +5,7 @@ project "03-HelloTriangleWithClass"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-    
+
     files
     {
         "src/**.h",
@@ -36,13 +36,13 @@ project "03-HelloTriangleWithClass"
 	filter "configurations:Debug"
         systemversion "latest"
         defines "CG_DEBUG"
-		runtime "Debug"
+	    runtime "Debug"
         symbols "on"
         staticruntime "off"
 
-	filter "configurations:Release"
+	filter "configurations:Release" 
         systemversion "latest"
         defines "CG_RELEASE"
-		runtime "Release"
+	    runtime "Release"
         optimize "on"
         staticruntime "On"
