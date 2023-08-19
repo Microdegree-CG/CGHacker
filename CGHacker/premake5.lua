@@ -1,3 +1,7 @@
+group "VendorTestCase"
+    include "VendorTestCase/SDL/"
+group ""
+
 project "CGHacker"
 	kind "StaticLib"
 	language "C++"
