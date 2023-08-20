@@ -10,8 +10,6 @@ group "CGConceptTest/LearnOpenGL"
     include "CGConceptTest/src/Learn_OpenGL/Texture_exercise2"
     include "CGConceptTest/src/Learn_OpenGL/Texture_exercise3"
     include "CGConceptTest/src/Learn_OpenGL/Texture_exercise4"
-    include "CGConceptTest/src/Learn_OpenGL/OpenGL-Sandbox"
-    include "CGConceptTest/src/Learn_OpenGL/OpenGL-Examples"
 group ""
 
 group "CGConceptTest/UseEigen"

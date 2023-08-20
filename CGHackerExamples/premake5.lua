@@ -1,4 +1,4 @@
-project "OpenGL-Examples"
+project "CGHackerExamples"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"

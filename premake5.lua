@@ -51,4 +51,6 @@ group "Dependencies"
 group ""
 
 include "CGHacker"
+include "CGHackerSandbox"
+include "CGHackerExamples"
 include "CGConceptTest"
