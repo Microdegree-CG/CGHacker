@@ -1,10 +1,10 @@
-#include "cg.h"
+#include "GLCore.h"
 #include "Eigen/Dense"
 
 
 int main()
 {
-	CG::Log::Init();
+	GLCore::Log::Init();
 
 	CG_INFO("Matrix arithmatic operation:");
 	Eigen::MatrixXd m1(3, 2);

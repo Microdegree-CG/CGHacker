@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "cg.h"
+#include "GLCore.h"
 #include "Eigen/Dense"
 
 
@@ -9,7 +9,7 @@
 
 int main()
 {
-	CG::Log::Init();
+	GLCore::Log::Init();
 	CG_INFO("Hello Eigen");
 	Eigen::MatrixXd m(2, 2);
 

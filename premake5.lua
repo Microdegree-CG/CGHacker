@@ -2,13 +2,12 @@ include "./vendor/premake_customization/solution_items.lua"
 
 workspace "CGHacker"
     architecture "x64"
-    startproject "OpenGL-Sandbox"
+    startproject "CGHackerSandbox"
 
     configurations
     {
         "Debug",
         "Release",
-        "Dist"
     }
 
     solution_items

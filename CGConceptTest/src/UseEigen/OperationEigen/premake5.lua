@@ -1,21 +1,25 @@
-project "01-HelloEigen"
+project "02-Arithmatic_operation"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
 
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
     
     files
     {
-        "HelloEigen.cpp"
+        "matrix_operation.cpp"
     }
 
     includedirs
     {
-        "%{IncludeDir.eigen}",
-        "%{wks.location}/CGHacker/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.IMGUI}",
+        "%{IncludeDir.GLM}",
+        "%{IncludeDir.EIGEN}",
 		"%{wks.location}/CGHacker/src",
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
