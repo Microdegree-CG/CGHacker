@@ -1,3 +1,176 @@
-path=C:\Users\guoliang\AppData\Local\nvim-data\mason\bin;C:\Users\guoliang\AppData\Local\nvim-data/mason/bin;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\VulkanSDK\1.3.216.0\Bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\LLVM\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\JAI\SDK\bin;C:\Program Files\JAI\SDK\bin\Win32_i86;C:\Program Files\JAI\SDK\GenICam\bin\Win64_x64;C:\Program Files\JAI\SDK\GenICam\bin\Win32_i86;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\oh-my-posh\bin;C:\Program Files\Polyspace\R2019b\runtime\win64;C:\Program Files\Polyspace\R2019b\bin;C:\Program Files\Polyspace\R2019b\polyspace\bin;C:\Program Files (x86)\NetSarang\Xftp 7\;C:\tools\winfetch;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\LINQPad7;C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeMX;C:\Users\guoliang\AppData\Local\Programs\Python\Launcher\;C:\Users\guoliang\devTools\Arm_GNU_Toolchain\bin;C:\Users\guoliang\AppData\Local\Microsoft\WindowsApps;C:\Users\guoliang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\CMake\bin;C:\Users\guoliang\go\bin;C:\Users\guoliang\.cargo\bin;C:\Users\guoliang\AppData\Roaming\npm;C:\tools\neovim\nvim-win64\bin;C:\Users\guoliang\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\guoliang\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\guoliang\AppData\Local\Microsoft\WindowsApps;C:\Users\guoliang\go\bin;C:\Users\guoliang\.dotnet\tools;C:\Users\guoliang\AppData\Local\ipinfo;C:\Program Files (x86)\NetSarang\Xshell 7\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI Foundation\IVI\Bin\;C:\Program Files\IVI Foundation\IVI\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.0\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\lib\mpv.install\tools;C:\Program Files\Go\bin;C:\Program Files\Meson\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Neovide\;C:\Users\guoliang\.emacs.d\bin;C:\Users\guoliang\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\guoliang\AppData\Local\Programs\Python\Python311\;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE;C:\Users\guoliang\scoop\shims;C:\Program Files (x86)\LuaRocks;C:\Users\guoliang\devTools\MinGW\bin;C:\Tools\premake;C:\Tools\msdfgen;C:\Tools\neovim\nvim-win64\bin;C:\tools\neovim\nvim-win64\bin;C:\tools\neovim\nvim-win64\bin;$(SolutionDir)/CVHacker/vendor/SDL2/Lib/x64
+////////////////////////////////////////////////////////////
+// Headers
+////////////////////////////////////////////////////////////
+#include <SFML/Window.hpp>
 
-path=C:\Users\guoliang\AppData\Local\nvim-data\mason\bin;C:\Users\guoliang\AppData\Local\nvim-data/mason/bin;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\VulkanSDK\1.3.216.0\Bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\LLVM\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\JAI\SDK\bin;C:\Program Files\JAI\SDK\bin\Win32_i86;C:\Program Files\JAI\SDK\GenICam\bin\Win64_x64;C:\Program Files\JAI\SDK\GenICam\bin\Win32_i86;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\oh-my-posh\bin;C:\Program Files\Polyspace\R2019b\runtime\win64;C:\Program Files\Polyspace\R2019b\bin;C:\Program Files\Polyspace\R2019b\polyspace\bin;C:\Program Files (x86)\NetSarang\Xftp 7\;C:\tools\winfetch;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\LINQPad7;C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeMX;C:\Users\guoliang\AppData\Local\Programs\Python\Launcher\;C:\Users\guoliang\devTools\Arm_GNU_Toolchain\bin;C:\Users\guoliang\AppData\Local\Microsoft\WindowsApps;C:\Users\guoliang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\CMake\bin;C:\Users\guoliang\go\bin;C:\Users\guoliang\.cargo\bin;C:\Users\guoliang\AppData\Roaming\npm;C:\tools\neovim\nvim-win64\bin;C:\Users\guoliang\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\guoliang\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\guoliang\AppData\Local\Microsoft\WindowsApps;C:\Users\guoliang\go\bin;C:\Users\guoliang\.dotnet\tools;C:\Users\guoliang\AppData\Local\ipinfo;C:\Program Files (x86)\NetSarang\Xshell 7\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI Foundation\IVI\Bin\;C:\Program Files\IVI Foundation\IVI\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.0\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\lib\mpv.install\tools;C:\Program Files\Go\bin;C:\Program Files\Meson\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Neovide\;C:\Users\guoliang\.emacs.d\bin;C:\Users\guoliang\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\guoliang\AppData\Local\Programs\Python\Python311\;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE;C:\Users\guoliang\scoop\shims;C:\Program Files (x86)\LuaRocks;C:\Users\guoliang\devTools\MinGW\bin;C:\Tools\premake;C:\Tools\msdfgen;C:\Tools\neovim\nvim-win64\bin;C:\tools\neovim\nvim-win64\bin;C:\tools\neovim\nvim-win64\bin;$(SolutionDir)/CVHacker/vendor/SFML/bin/
+#define GLAD_GL_IMPLEMENTATION
+#include <gl.h>
+
+#ifdef SFML_SYSTEM_IOS
+#include <SFML/Main.hpp>
+#endif
+
+////////////////////////////////////////////////////////////
+/// Entry point of application
+///
+/// \return Application exit code
+///
+////////////////////////////////////////////////////////////
+int main()
+{
+    // Request a 24-bits depth buffer when creating the window
+    sf::ContextSettings contextSettings;
+    contextSettings.depthBits = 24;
+
+    // Create the main window
+    sf::Window window(sf::VideoMode(640, 480), "SFML window with OpenGL", sf::Style::Default, contextSettings);
+
+    // Make it the active window for OpenGL calls
+    window.setActive();
+
+    // Load OpenGL or OpenGL ES entry points using glad
+#ifdef SFML_OPENGL_ES
+    gladLoadGLES1(reinterpret_cast<GLADloadfunc>(sf::Context::getFunction));
+#else
+    gladLoadGL(reinterpret_cast<GLADloadfunc>(sf::Context::getFunction));
+#endif
+
+    // Set the color and depth clear values
+#ifdef SFML_OPENGL_ES
+    glClearDepthf(1.f);
+#else
+    glClearDepth(1.f);
+#endif
+    glClearColor(0.f, 0.f, 0.f, 1.f);
+
+    // Enable Z-buffer read and write
+    glEnable(GL_DEPTH_TEST);
+    glDepthMask(GL_TRUE);
+
+    // Disable lighting and texturing
+    glDisable(GL_LIGHTING);
+    glDisable(GL_TEXTURE_2D);
+
+    // Configure the viewport (the same size as the window)
+    glViewport(0, 0, static_cast<GLsizei>(window.getSize().x), static_cast<GLsizei>(window.getSize().y));
+
+    // Setup a perspective projection
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    GLfloat ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
+#ifdef SFML_OPENGL_ES
+    glFrustumf(-ratio, ratio, -1.f, 1.f, 1.f, 500.f);
+#else
+    glFrustum(-ratio, ratio, -1.f, 1.f, 1.f, 500.f);
+#endif
+
+    // Define a 3D cube (6 faces made of 2 triangles composed by 3 vertices)
+    GLfloat cube[] =
+    {
+        // positions    // colors (r, g, b, a)
+        -50, -50, -50,  0, 0, 1, 1,
+        -50,  50, -50,  0, 0, 1, 1,
+        -50, -50,  50,  0, 0, 1, 1,
+        -50, -50,  50,  0, 0, 1, 1,
+        -50,  50, -50,  0, 0, 1, 1,
+        -50,  50,  50,  0, 0, 1, 1,
+
+         50, -50, -50,  0, 1, 0, 1,
+         50,  50, -50,  0, 1, 0, 1,
+         50, -50,  50,  0, 1, 0, 1,
+         50, -50,  50,  0, 1, 0, 1,
+         50,  50, -50,  0, 1, 0, 1,
+         50,  50,  50,  0, 1, 0, 1,
+
+        -50, -50, -50,  1, 0, 0, 1,
+         50, -50, -50,  1, 0, 0, 1,
+        -50, -50,  50,  1, 0, 0, 1,
+        -50, -50,  50,  1, 0, 0, 1,
+         50, -50, -50,  1, 0, 0, 1,
+         50, -50,  50,  1, 0, 0, 1,
+
+        -50,  50, -50,  0, 1, 1, 1,
+         50,  50, -50,  0, 1, 1, 1,
+        -50,  50,  50,  0, 1, 1, 1,
+        -50,  50,  50,  0, 1, 1, 1,
+         50,  50, -50,  0, 1, 1, 1,
+         50,  50,  50,  0, 1, 1, 1,
+
+        -50, -50, -50,  1, 0, 1, 1,
+         50, -50, -50,  1, 0, 1, 1,
+        -50,  50, -50,  1, 0, 1, 1,
+        -50,  50, -50,  1, 0, 1, 1,
+         50, -50, -50,  1, 0, 1, 1,
+         50,  50, -50,  1, 0, 1, 1,
+
+        -50, -50,  50,  1, 1, 0, 1,
+         50, -50,  50,  1, 1, 0, 1,
+        -50,  50,  50,  1, 1, 0, 1,
+        -50,  50,  50,  1, 1, 0, 1,
+         50, -50,  50,  1, 1, 0, 1,
+         50,  50,  50,  1, 1, 0, 1,
+    };
+
+    // Enable position and color vertex components
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 7 * sizeof(GLfloat), cube);
+    glColorPointer(4, GL_FLOAT, 7 * sizeof(GLfloat), cube + 3);
+
+    // Disable normal and texture coordinates vertex components
+    glDisableClientState(GL_NORMAL_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
+    // Create a clock for measuring the time elapsed
+    sf::Clock clock;
+
+    // Start the game loop
+    while (window.isOpen())
+    {
+        // Process events
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed)
+                window.close();
+
+            // Escape key: exit
+            if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
+                window.close();
+
+            // Resize event: adjust the viewport
+            if (event.type == sf::Event::Resized)
+            {
+                glViewport(0, 0, static_cast<GLsizei>(event.size.width), static_cast<GLsizei>(event.size.height));
+                glMatrixMode(GL_PROJECTION);
+                glLoadIdentity();
+                GLfloat newRatio = static_cast<float>(event.size.width) / static_cast<float>(event.size.height);
+#ifdef SFML_OPENGL_ES
+                glFrustumf(-newRatio, newRatio, -1.f, 1.f, 1.f, 500.f);
+#else
+                glFrustum(-newRatio, newRatio, -1.f, 1.f, 1.f, 500.f);
+#endif
+            }
+        }
+
+        // Clear the color and depth buffers
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // Apply some transformations to rotate the cube
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+        glTranslatef(0.f, 0.f, -200.f);
+        glRotatef(clock.getElapsedTime().asSeconds() * 50, 1.f, 0.f, 0.f);
+        glRotatef(clock.getElapsedTime().asSeconds() * 30, 0.f, 1.f, 0.f);
+        glRotatef(clock.getElapsedTime().asSeconds() * 90, 0.f, 0.f, 1.f);
+
+        // Draw the cube
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+
+        // Finally, display the rendered frame on screen
+        window.display();
+    }
+
+    return EXIT_SUCCESS;
+}
