@@ -16,3 +16,11 @@ group "CGConceptTest/EigenExamples"
     include "CGConceptTest/src/UseEigen/HelloEigen"
     include "CGConceptTest/src/UseEigen/OperationEigen"
 group ""
+
+group "CGConceptTest/SDLExamples"
+    include "src/UseSDL/HelloSDL/"
+group ""
+
+group "CGConceptTest/SFMLExamples"
+    include "src/UseSFML/HelloSFML/"
+group ""
