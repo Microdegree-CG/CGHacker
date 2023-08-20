@@ -11,12 +11,12 @@
 #include "EBO/IndexBuffer.h"
 #include "Renderer.h"
 
-#include "cg.h"
+#include "GLCore.h"
 #include <iostream>
 
 int main() 
 {
-	CG::Log::Init();
+	GLCore::Log::Init();
 	GLFWwindow* window{ nullptr };
 
 	if (!glfwInit())

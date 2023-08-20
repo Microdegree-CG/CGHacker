@@ -15,19 +15,16 @@ project "03-Hello-Triangle"
     includedirs
     {
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLM}",
         "%{IncludeDir.GLAD}",
-        "%{IncludeDir.EIGEN}",
-        "%{wks.location}/CGHacker/vendor/eigen",
-        "%{wks.location}/CGHacker/src",
-        "%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{IncludeDir.IMGUI}",
+		"%{wks.location}/CGHacker/src",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "GLFW",
-        "GLAD",
         "CGHacker",
-        "opengl32.lib"
     }
 
     filter "system:windows"

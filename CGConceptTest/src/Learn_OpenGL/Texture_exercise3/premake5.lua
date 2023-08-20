@@ -15,18 +15,16 @@ project "05-Texture_exercise3"
     includedirs
     {
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLM}",
         "%{IncludeDir.GLAD}",
-        "%{wks.location}/CGHacker/vendor/spdlog/include",
-        "%{wks.location}/CGHacker/src"
-
+		"%{IncludeDir.IMGUI}",
+		"%{wks.location}/CGHacker/src",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "GLFW",
-        "GLAD",
         "CGHacker",
-        "opengl32.lib"
     }
 
     filter "system:windows"

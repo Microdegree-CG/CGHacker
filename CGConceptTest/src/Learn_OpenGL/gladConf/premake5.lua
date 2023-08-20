@@ -15,17 +15,16 @@ project "02-GLADConf"
     includedirs
     {
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLM}",
         "%{IncludeDir.GLAD}",
+		"%{IncludeDir.IMGUI}",
 		"%{wks.location}/CGHacker/src",
 		"%{wks.location}/CGHacker/vendor/spdlog/include",
     }
 
     links
     {
-        "GLFW",
-        "GLAD",
         "CGHacker",
-        "opengl32.lib"
     }
 
     filter "system:windows"

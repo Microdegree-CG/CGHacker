@@ -2,10 +2,9 @@ project "OpenGL-Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
 
-	targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("../../bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("../../bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -15,12 +14,12 @@ project "OpenGL-Sandbox"
 
 	includedirs
 	{
-		"../CGHacker/vendor/spdlog/include",
-		"../CGHacker/src",
-		"../CGHacker/vendor",
-		"../CGHacker/%{IncludeDir.GLM}",
-		"../CGHacker/%{IncludeDir.GLAD}",
-		"../CGHacker/%{IncludeDir.IMGUI}"
+		"%{IncludeDir.GLM}",
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.IMGUI}",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{wks.location}/CGHacker/src",
+		"%{wks.location}/CGHacker/vendor",
 	}
 
 	links

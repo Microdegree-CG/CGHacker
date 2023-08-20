@@ -6,7 +6,7 @@
 #include <GLFW/glfw3.h>
 #endif
 
-#include "cg.h"
+#include "GLcore.h"
 #include <iostream>
 
 void process_input(GLFWwindow* window)
@@ -18,7 +18,7 @@ void process_input(GLFWwindow* window)
 int main()
 {
 
-	CG::Log::Init();
+	GLCore::Log::Init();
 	glfwInit();
 
 	// Create window use glfw
