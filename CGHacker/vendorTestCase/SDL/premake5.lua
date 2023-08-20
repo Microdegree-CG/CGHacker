@@ -28,7 +28,7 @@ project "TestCaseSDL"
 
     debugenvs
     {
-      "path=" .. os.getenv("path") .. ";" .. "%{DLLDirs.SDL2}"
+      "path=" .. os.getenv("path") .. ";" .. "%{DLLDir.SDL2}"
     }
 
     filter "system:windows"

@@ -1,5 +1,9 @@
-group "VendorTestCase"
+group "VendorTestCase/SDL"
     include "VendorTestCase/SDL/"
+group ""
+
+group "VendorTestCase/SFML"
+    include "VendorTestCase/SFML/"
 group ""
 
 project "CGHacker"
