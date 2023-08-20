@@ -1,4 +1,4 @@
-project "OpenGL-Sandbox"
+project "CGHackerSandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
