@@ -1,9 +1,6 @@
 [submodule "CGHacker/vendor/eigen"]
 	path = CGHacker/vendor/eigen
 	url = https://gitlab.com/libeigen/eigen.git
-[submodule "/CGHacker/vendor/spdlog"]
-	path = CGHacker/vendor/spdlog
-	url = https://github.com/gabime/spdlog.git
 [submodule "vendor/LearnOpenGL"]
 	path = vendor/LearnOpenGL
 	url = https://github.com/JoeyDeVries/LearnOpenGL.git
@@ -22,6 +19,10 @@
 [submodule "CGHacker/vendor/glm"]
 	path = CGHacker/vendor/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "/CGHacker/vendor/spdlog"]
+    branch = "opengl_demo_pass"
+	path = CGHacker/vendor/spdlog
+	url = https://github.com/Microdegree-CG/spdlog.git
 [submodule "CGHacker/vendor/imgui"]
     branch = "opengl_demo_pass"
 	path = CGHacker/vendor/imgui
