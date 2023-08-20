@@ -19,7 +19,7 @@ namespace GLCore::Utils {
 		}
 		else
 		{
-			LOG_ERROR("Could not open file '{0}'", filepath);
+			CG_ERROR("Could not open file '{0}'", filepath);
 		}
 
 		return result;
@@ -51,7 +51,7 @@ namespace GLCore::Utils {
 
 			glDeleteShader(shader);
 
-			LOG_ERROR("{0}", infoLog.data());
+			CG_ERROR("{0}", infoLog.data());
 			// HZ_CORE_ASSERT(false, "Shader compilation failure!");
 		}
 
@@ -95,7 +95,7 @@ namespace GLCore::Utils {
 			glDeleteShader(vertexShader);
 			glDeleteShader(fragmentShader);
 
-			LOG_ERROR("{0}", infoLog.data());
+			CG_ERROR("{0}", infoLog.data());
 			// HZ_CORE_ASSERT(false, "Shader link failure!");
 		}
 		

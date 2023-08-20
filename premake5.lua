@@ -28,11 +28,11 @@ IncludeDir = {}
 IncludeDir["EIGEN"]   = "%{wks.location}/CGHacker/vendor/eigen"
 IncludeDir["GLFW"]    = "%{wks.location}/CGHacker/vendor/glfw/include"
 IncludeDir["GLAD"]    = "%{wks.location}/CGHacker/vendor/Glad/include"
-IncludeDir["IMGUI"]    = "%{wks.location}/CGHacker/vendor/imgui"
+IncludeDir["IMGUI"]   = "%{wks.location}/CGHacker/vendor/imgui"
 IncludeDir["STB"]     = "%{wks.location}/CGHacker/vendor/stb"
 IncludeDir["GLM"]     = "%{wks.location}/CGHacker/vendor/glm"
-IncludeDir["SDL2"]     = "%{wks.location}/vendor/SDL2/include"
-IncludeDir["SFML"]     = "%{wks.location}/vendor/SFML/include"
+IncludeDir["SDL2"]    = "%{wks.location}/vendor/SDL2/include"
+IncludeDir["SFML"]    = "%{wks.location}/vendor/SFML/include"
 
 LinkDir={}
 LinkDir["SDL2"] = "%{wks.location}/vendor/SDL2/lib/x64/"
@@ -48,13 +48,7 @@ group "Dependencies"
     include "CGHacker/vendor/glfw"
     include "CGHacker/vendor/Glad"
     include "CGHacker/vendor/imgui"
-    include "CGHacker/vendor/SDL"
 group ""
 
-
 include "CGHacker"
-include "OpenGL-Sandbox"
-include "OpenGL-Examples"
-
-include "premakes/learn_opengl.lua"
-include "premakes/learn_eigen.lua"
+include "CGConceptTest"

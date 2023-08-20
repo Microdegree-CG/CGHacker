@@ -1,5 +1,5 @@
+#include <GLCore.h>
 #include <GLFW/glfw3.h>
-#include "cg.h"
 
 void process_input(GLFWwindow* window)
 {
@@ -9,12 +9,12 @@ void process_input(GLFWwindow* window)
 
 int main()
 {
-	CG::Log::Init();
+	GLCore::Log::Init();
 
 	if (!glfwInit())
 		return -1;
 	else
-		CG_INFO("Init GLFW");
+		("Init GLFW");
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);

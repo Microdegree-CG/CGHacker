@@ -14,7 +14,7 @@ namespace GLCore {
 
 	static void GLFWErrorCallback(int error, const char* description)
 	{
-		LOG_ERROR("GLFW Error ({0}): {1}", error, description);
+		CG_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
 	Window* Window::Create(const WindowProps& props)
@@ -52,10 +52,10 @@ namespace GLCore {
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		GLCORE_ASSERT(status, "Failed to initialize Glad!");
 
-		LOG_INFO("OpenGL Info:");
-		LOG_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
-		LOG_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
-		LOG_INFO("  Version: {0}", glGetString(GL_VERSION));
+		CG_INFO("OpenGL Info:");
+		CG_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		CG_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		CG_INFO("  Version: {0}", glGetString(GL_VERSION));
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
