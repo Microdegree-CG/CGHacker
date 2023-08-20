@@ -32,12 +32,15 @@ IncludeDir["IMGUI"]    = "%{wks.location}/CGHacker/vendor/imgui"
 IncludeDir["STB"]     = "%{wks.location}/CGHacker/vendor/stb"
 IncludeDir["GLM"]     = "%{wks.location}/CGHacker/vendor/glm"
 IncludeDir["SDL2"]     = "%{wks.location}/vendor/SDL2/include"
+IncludeDir["SFML"]     = "%{wks.location}/vendor/SFML/include"
 
 LinkDir={}
 LinkDir["SDL2"] = "%{wks.location}/vendor/SDL2/lib/x64/"
+LinkDir["SFML"] = "%{wks.location}/vendor/SFML/lib/"
 
-DLLDirs = {}
-DLLDirs["SDL2"] = "%{wks.location}/CVHacker/vendor/Lib/x64"
+DLLDir = {}
+DLLDir["SDL2"] = "%{wks.location}/vendor/SDL2/Lib/x64"
+DLLDir["SFML"] = "%{wks.location}/vendor/SFML/bin/"
 
 -- projects
 group "Dependencies"

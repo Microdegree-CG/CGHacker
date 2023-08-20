@@ -2,8 +2,27 @@
 #include <cstdio>
 #include <iostream>
 
+void InitializeProgram()
+{
+	
+}
+
+void MainLoop()
+{
+	
+}
+
+void CleanUp()
+{
+	
+}
+
 int main(int argc, char* argv[])
 {
+	InitializeProgram();
+	MainLoop();
+	CleanUp();
+
 	const int WIDTH = 640;
 	const int HEIGHT = 480;
 	SDL_Window* window = NULL;
