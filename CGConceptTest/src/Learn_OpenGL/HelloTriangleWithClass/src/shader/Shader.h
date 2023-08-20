@@ -3,7 +3,6 @@
 #include <string>
 #include <unordered_map>
 
-
 struct ShaderSource
 {
 	std::string vectexShader;
@@ -20,7 +19,6 @@ private:
 public:
 	Shader(const std::string& filepath);
 	~Shader();
-
 
 	void Bind() const;
 	void Unbind() const;

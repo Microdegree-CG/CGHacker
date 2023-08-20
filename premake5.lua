@@ -2,7 +2,7 @@ include "./vendor/premake_customization/solution_items.lua"
 
 workspace "CGHacker"
     architecture "x64"
-    startproject "CGHackerTest"
+    startproject "OpenGL-Sandbox"
 
     configurations
     {
@@ -28,19 +28,33 @@ IncludeDir = {}
 IncludeDir["EIGEN"]   = "%{wks.location}/CGHacker/vendor/eigen"
 IncludeDir["GLFW"]    = "%{wks.location}/CGHacker/vendor/glfw/include"
 IncludeDir["GLAD"]    = "%{wks.location}/CGHacker/vendor/Glad/include"
+IncludeDir["IMGUI"]    = "%{wks.location}/CGHacker/vendor/imgui"
 IncludeDir["STB"]     = "%{wks.location}/CGHacker/vendor/stb"
+IncludeDir["GLM"]     = "%{wks.location}/CGHacker/vendor/glm"
+IncludeDir["SDL2"]     = "%{wks.location}/vendor/SDL2/include"
+IncludeDir["SFML"]     = "%{wks.location}/vendor/SFML/include"
 
+LinkDir={}
+LinkDir["SDL2"] = "%{wks.location}/vendor/SDL2/lib/x64/"
+LinkDir["SFML"] = "%{wks.location}/vendor/SFML/lib/"
+
+DLLDir = {}
+DLLDir["SDL2"] = "%{wks.location}/vendor/SDL2/Lib/x64"
+DLLDir["SFML"] = "%{wks.location}/vendor/SFML/bin/"
 
 -- projects
 group "Dependencies"
     include "vendor"
     include "CGHacker/vendor/glfw"
     include "CGHacker/vendor/Glad"
+    include "CGHacker/vendor/imgui"
+    include "CGHacker/vendor/SDL"
 group ""
 
 
 include "CGHacker"
-include "CGHackerTest"
+include "OpenGL-Sandbox"
+include "OpenGL-Examples"
 
 include "premakes/learn_opengl.lua"
 include "premakes/learn_eigen.lua"

@@ -9,15 +9,17 @@ project "04-Shaders"
     files
     {
         "src/**.h",
-        "src/**.cpp"
+        "src/**.cpp",
+        "asserts/**.fs",
+        "asserts/**.vs",
     }
 
     includedirs
     {
-		"%{wks.location}/CGHacker/vendor/spdlog/include",
-		"%{wks.location}/CGHacker/src",
+        "%{wks.location}/CGHacker/vendor/spdlog/include",
+        "%{wks.location}/CGHacker/src",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}"        
+        "%{IncludeDir.GLAD}"
     }
 
     links
@@ -33,13 +35,13 @@ project "04-Shaders"
 
 	filter "configurations:Debug"
         defines "CG_DEBUG"
-        systemversion "latest"
-		runtime "Debug"
+        systemversion "latest" 
+        runtime "Debug"
         symbols "on"
         staticruntime "off"
 
 	filter "configurations:Release"
-        systemversion "latest"
-		runtime "Release"
+        systemversion "latest" 
+        runtime "Release"
         optimize "on"
         staticruntime "On"
