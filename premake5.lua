@@ -1,4 +1,5 @@
 include "./vendor/premake_customization/solution_items.lua"
+require("vendor/export-compile-commands/export-compile-commands")
 
 workspace "CGHacker"
     architecture "x64"
