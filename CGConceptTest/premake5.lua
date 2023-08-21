@@ -19,6 +19,7 @@ group ""
 
 group "CGConceptTest/SDLExamples"
     include "src/UseSDL/HelloSDL/"
+    include "src/UseSDL/OpenGLSDL/"
 group ""
 
 group "CGConceptTest/SFMLExamples"

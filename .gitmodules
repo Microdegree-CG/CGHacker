@@ -31,3 +31,6 @@
     branch = "opengl_demo_pass"
 	path = CGHacker/vendor/glfw
 	url = https://github.com/Microdegree-CG/glfw.git
+[submodule "vendor/export-compile-commands"]
+	path = vendor/export-compile-commands
+	url = https://github.com/Microdegree-CG/premake-export-compile-commands

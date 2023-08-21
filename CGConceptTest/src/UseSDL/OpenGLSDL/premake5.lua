@@ -1,4 +1,4 @@
-project "01-HelloEigen"
+project "OpenGLSDL"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
@@ -8,23 +8,34 @@ project "01-HelloEigen"
     
     files
     {
-        "src/HelloEigen.cpp"
+        "src/main.cpp"
     }
 
     includedirs
     {
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}",
-        "%{IncludeDir.IMGUI}",
         "%{IncludeDir.GLM}",
-        "%{IncludeDir.EIGEN}",
+        "%{IncludeDir.GLAD}",
+		"%{IncludeDir.IMGUI}",
+        "%{IncludeDir.SDL2}",
 		"%{wks.location}/CGHacker/src",
-        "%{wks.location}/CGHacker/vendor/spdlog/include",
+		"%{wks.location}/CGHacker/vendor/spdlog/include",
+    }
+    libdirs
+    {
+        "%{LinkDir.SDL2}",
     }
 
     links
     {
+        "SDL2",
+        "SDL2main",
         "CGHacker"
+    }
+
+    debugenvs
+    {
+      "path=" .. os.getenv("path") .. ";" .. "%{DLLDir.SDL2}"
     }
 
     filter "system:windows"

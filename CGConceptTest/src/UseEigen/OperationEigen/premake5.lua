@@ -8,7 +8,7 @@ project "02-Arithmatic_operation"
     
     files
     {
-        "matrix_operation.cpp"
+        "src/matrix_operation.cpp"
     }
 
     includedirs
