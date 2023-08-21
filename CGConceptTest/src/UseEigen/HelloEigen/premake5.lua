@@ -8,7 +8,7 @@ project "01-HelloEigen"
     
     files
     {
-        "HelloEigen.cpp"
+        "src/HelloEigen.cpp"
     }
 
     includedirs
