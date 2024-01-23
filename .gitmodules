@@ -34,3 +34,6 @@
 [submodule "vendor/export-compile-commands"]
 	path = vendor/export-compile-commands
 	url = https://github.com/Microdegree-CG/premake-export-compile-commands
+[submodule "CGHacker/vendor/opengltutor"]
+	path = CGHacker/vendor/opengltutor
+	url = https://github.com/parallel101/opengltutor.git
