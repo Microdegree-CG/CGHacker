@@ -1,12 +1,7 @@
-group "VendorTestCase"
-    include "VendorTestCase/SDL/"
-group ""
-
 project "CGHacker"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
 
 	targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
@@ -43,8 +38,8 @@ project "CGHacker"
 	links 
 	{ 
 		"GLFW",
-		"Glad",
-		"ImGui",
+		"GlAD",
+		"IMGUI",
 		"opengl32.lib"
 	}
 
@@ -61,8 +56,10 @@ project "CGHacker"
 		defines "GLCORE_DEBUG"
 		runtime "Debug"
 		symbols "on"
+	    staticruntime "off"
 
 	filter "configurations:Release"
 		defines "GLCORE_RELEASE"
 		runtime "Release"
 		optimize "on"
+	    staticruntime "on"

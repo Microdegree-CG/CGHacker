@@ -3,6 +3,8 @@
 **/bin-int/
 
 !vendor/premake/bin/
+!vendor/SFML
+!vendor/SDL2
 # Log files
 *.log
 

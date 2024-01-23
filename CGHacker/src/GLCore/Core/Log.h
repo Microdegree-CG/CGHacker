@@ -19,8 +19,8 @@ namespace GLCore {
 }
 
 // Client log macros
-#define LOG_TRACE(...)         ::GLCore::Log::GetLogger()->trace(__VA_ARGS__)
-#define LOG_INFO(...)          ::GLCore::Log::GetLogger()->info(__VA_ARGS__)
-#define LOG_WARN(...)          ::GLCore::Log::GetLogger()->warn(__VA_ARGS__)
-#define LOG_ERROR(...)         ::GLCore::Log::GetLogger()->error(__VA_ARGS__)
-#define LOG_CRITICAL(...)      ::GLCore::Log::GetLogger()->critical(__VA_ARGS__)
+#define CG_TRACE(...)         ::GLCore::Log::GetLogger()->trace(__VA_ARGS__)
+#define CG_INFO(...)          ::GLCore::Log::GetLogger()->info(__VA_ARGS__)
+#define CG_WARN(...)          ::GLCore::Log::GetLogger()->warn(__VA_ARGS__)
+#define CG_ERROR(...)         ::GLCore::Log::GetLogger()->error(__VA_ARGS__)
+#define CG_CRITICAL(...)      ::GLCore::Log::GetLogger()->critical(__VA_ARGS__)
