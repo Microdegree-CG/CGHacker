@@ -1,4 +1,4 @@
-#include <GLCore.h>
+#include "GLCore/Core/Log.h"
 #include <GLFW/glfw3.h>
 
 void process_input(GLFWwindow* window)
@@ -36,14 +36,14 @@ int main()
 	while (!glfwWindowShouldClose(window))
 	{
 		process_input(window);
-    
+
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
-	
+
 	glfwDestroyWindow(window);
 	glfwTerminate();
 }
