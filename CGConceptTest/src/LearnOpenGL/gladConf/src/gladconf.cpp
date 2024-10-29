@@ -6,7 +6,7 @@
 #include <GLFW/glfw3.h>
 #endif
 
-#include "GLcore.h"
+#include "GLCore/Core/log.h"
 #include <iostream>
 
 void process_input(GLFWwindow* window)
@@ -37,8 +37,8 @@ int main()
 		return -1;
 	}
 
-// NOTE:(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
-// NOTE:(guoliang): Must call before gladLoadGLLoader
+	// NOTE:(guoliang): Tell GLFW to make the context of our window the main context on the current thread.
+	// NOTE:(guoliang): Must call before gladLoadGLLoader
 	glfwMakeContextCurrent(window);
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
