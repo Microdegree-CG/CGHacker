@@ -37,3 +37,6 @@
 [submodule "CGHacker/vendor/opengltutor"]
 	path = CGHacker/vendor/opengltutor
 	url = https://github.com/parallel101/opengltutor.git
+[submodule "CGHacker/vendor/Nuklear"]
+	path = CGHacker/vendor/Nuklear
+	url = https://github.com/Immediate-Mode-UI/Nuklear.git
