@@ -2,7 +2,7 @@
 	path = CGHacker/vendor/eigen
 	url = https://gitlab.com/libeigen/eigen.git
 [submodule "vendor/LearnOpenGL"]
-	path = vendor/LearnOpenGL
+	path = CGConceptTest/vendor/LearnOpenGL
 	url = https://github.com/JoeyDeVries/LearnOpenGL.git
 [submodule "CGHacker/vendor/stb"]
 	path = CGHacker/vendor/stb
