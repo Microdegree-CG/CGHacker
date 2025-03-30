@@ -14,7 +14,7 @@ int main()
 	if (!glfwInit())
 		return -1;
 	else
-		("Init GLFW");
+		CG_ERROR("Init GLFW");
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
