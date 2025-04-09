@@ -86,15 +86,15 @@ int main()
 		1, 2, 3   // second Triangle
 	};
 
-	unsigned int vao;
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
 	unsigned int vbo;
 	glGenBuffers(1, &vbo);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	unsigned int vao;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
 
 	unsigned int ebo;
 	glGenBuffers(1, &ebo);
@@ -122,6 +122,7 @@ int main()
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
+
 	glDeleteVertexArrays(1, &vao);
 	glDeleteBuffers(1, &vbo);
 	glDeleteBuffers(1, &ebo);
